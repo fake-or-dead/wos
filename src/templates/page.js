@@ -1,16 +1,20 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import PropTypes from "prop-types"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 class Page extends Component {
   render() {
+    console.log(this.props.data);
     const page = this.props.data.wordpressPage
     return (
-      <>
-        <h1>{page.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: page.content }} />
-        {page.content}
-      </>
+      <Layout>
+      <SEO title={page.title} />
+      <h2><Link to="/">{page.title}</Link></h2>
+      <div dangerouslySetInnerHTML={{ __html: page.content }} />
+    </Layout>
     )
   }
 }
@@ -29,8 +33,6 @@ export const pageQuery = graphql`
         excerpt
         date
         modified
-        slug
-        status
     }
   }
 `

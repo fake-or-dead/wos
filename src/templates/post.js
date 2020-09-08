@@ -6,6 +6,7 @@ class Post extends Component {
     const post = this.props.data.wordpressPost
     return (
       <>
+        POST
         <h1>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
         {post.content}
