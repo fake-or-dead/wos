@@ -52,6 +52,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://www.wallofsharing.com/wp-content/uploads/2019/07/wos_thumbnail-1.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
