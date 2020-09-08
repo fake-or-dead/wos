@@ -1,16 +1,19 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 class Post extends Component {
   render() {
     const post = this.props.data.wordpressPost
     return (
-      <>
-        POST
-        <h1>{post.title}</h1>
+      <Layout>
+        <SEO title={post.title} />
+        <h2>{post.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: post.content }} />
-        {post.content}
-      </>
+      </Layout>
     )
   }
 }

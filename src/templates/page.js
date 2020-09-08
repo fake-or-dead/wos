@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
@@ -7,14 +7,13 @@ import SEO from "../components/seo"
 
 class Page extends Component {
   render() {
-    console.log(this.props.data);
     const page = this.props.data.wordpressPage
     return (
       <Layout>
-      <SEO title={page.title} />
-      <h2><Link to="/">{page.title}</Link></h2>
-      <div dangerouslySetInnerHTML={{ __html: page.content }} />
-    </Layout>
+        <SEO title={page.title} />
+        <h2>{page.title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      </Layout>
     )
   }
 }
